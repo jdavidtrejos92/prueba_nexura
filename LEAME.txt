@@ -1,0 +1,17 @@
+﻿//instalador
+1. Crear base de datos ejecutando el archivo: 
+   Bd_Pruebatecnica.sql
+2. Modificar el archivo de conexion.php
+   Con los siguientes Datos:
+
+	define("HOSTNAME", "localhost");
+	define("DATABASE", "prueba_tecnica_dev");      
+	define("USERNAME", "root");    
+	define("PASSWORD", ""); 
+
+3. Configurar el apache con el puerto 88 para que el ajax pueda hacer su envio de datos por POST.
+
+   Ejemplo: http://localhost:88/prueba_nexura/formulario/
+	
+   --> cualquier duda, escribirme al correo : jdtrejos_1992@hotmail.com
+
