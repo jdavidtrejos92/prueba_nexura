@@ -1,0 +1,160 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	 <!-- bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- jquery -->
+    	  <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+		  <script type="text/javascript" src="./js/jquery-ui-1.10.4.custom.min.js"></script>
+          <script type="text/javascript" src="./js/jquery.number.min.js"></script>
+		  
+		  
+		  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		  
+		  <script type="text/javascript" src="./funciones.js"></script>
+		  
+		 
+    <title>Panel Empleado</title>
+    
+    <meta name="viewport" content="width=device-width, user-scalable= no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0 ">
+    <link rel="stylesheet" href="css/estilos.css">
+	
+	
+    <script>
+			start();
+    </script>
+</head>
+
+<body>
+
+    <div class="contenedor">
+		<!--<form onsubmit="setTimeout('document.forms[0].reset()', 2000)" class="form">-->
+        <form id="formulario" class="form">
+
+            <div class="form-header">
+                <h1 class="form-title">Panel Empleado</h1>
+            </div>
+			 <div class="form-group">
+				  <label for="nombre" class="control-label col-sm-12 text-white">Nombre:</label>
+				  <div class="col-sm-12">          
+					<input type="text" class="form-control" id="nombre" placeholder="Escriba Nombre" name="nombre2" >
+				  </div>
+			 </div>
+			 
+			 <div class="form-group">
+				  <label for="correo" class="control-label col-sm-12 text-white">Correo:</label>
+				  <div class="col-sm-12">          
+					<input type="email" class="form-control" id="correo" placeholder="Escriba correo" name="correo2" >
+				  </div>
+			 </div>
+
+			
+			<label for="sexo2" class="control-label col-sm-12 text-white">Marcar Sexo: 
+								
+						<div class="radio">
+							<label><input type="radio" id="r1" name="rate" value="M"> Masculino</label>
+						</div>
+						<div class="radio">
+						  <label><input type="radio" id="r2" name="rate" value="F"> Femenino</label>
+						</div>
+								
+					  
+			</label>
+					  
+  
+
+	<br>
+			<div class="form-group"> 
+				<label for="areasempleado" class="control-label col-sm-12 text-white">Areas Empleado</label>
+				<div class="col-sm-12">
+				<select class="form-control " id="areasempleado"></select> 
+				</div>
+			</div>
+	
+		 
+	<br>
+	
+	
+			<div class="form-group">
+			  <label for="comment" class="control-label col-sm-12 text-white">Observacion:</label>
+			  <div class="col-sm-12">
+				<textarea class="form-control" rows="5" id="observacion" name="observacion2" placeholder="Escriba Observacion"></textarea>
+			  </div>
+			</div>
+
+			<div class="checkbox">
+				<label class="control-label col-sm-12 text-white" for="boletin">
+				 <div class="col-sm-12">
+					<input type="checkbox" id="boletin" value="1">        Deseo recibir boletin informativo
+				 </div>
+				</label>
+			</div>
+			
+			
+			
+			<br>
+		<table class="table   col-sm-20">
+		<tr>
+			<td>
+				<table class="table table-striped text-white ">
+					   <thead>
+						<label for="nombrerol" class="table table-striped text-white ">Nombre del Rol</label> 
+							
+					   </thead>
+					  <tbody id="rol1">
+					  </tbody>
+				</table> 
+			</td>
+			<td>
+			
+			<div class="col-sm-20">
+			<center>
+			   <input type="button"  class="btn4" onclick="limp();" >
+			   <input type="button"  class="btn3" onclick="crearemp();" >
+			 </center>
+			 </div>
+			
+							
+			</td>
+		</tr>
+		
+	    </table> 
+			<br>			
+			
+		   <!--Botones con boostrap-->
+
+		   <br>
+           <input type="hidden"  id="control" >
+           <input type="hidden"  id="idmod" name="idmod" >
+		   <br>     
+			<!-- Tabla de empleados creados -->	
+		<div class="container">
+			<table  class="table text-white" border="2">
+			  <thead>
+				<th>Nombre</th>
+				<th>Email</th>
+				<th>Sexo</th>
+				<th>Area</th>
+				<th>Boletin</th>
+				<th></th>
+				<th></th>
+				</thead>
+			  <tbody id="cuerpo">
+			  </tbody>
+			</table> 
+</div>
+        </form>
+       <? php
+
+		include("crudEmpleados.php");
+
+		?>
+    </div>
+    
+           
+</body>
+</html>
